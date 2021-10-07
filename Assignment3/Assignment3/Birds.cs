@@ -6,8 +6,22 @@ namespace A3.Birds
 	abstract class Bird
 	{
 		public static Random Rand = new Random(1);
+
+        /// <summary>
+        /// Return array of eggs of user specified length. Creates eggs randomly for each index of array
+        /// </summary>
+        /// <param name="numEggs"></param>
+        /// <returns></returns>
         public abstract Egg[] LayEggs(int numEggs);
 
+        /// <summary>
+        /// Create new egg within size range and with specified color. Has specified chance to be a broken egg
+        /// </summary>
+        /// <param name="minSize"></param>
+        /// <param name="maxSize"></param>
+        /// <param name="brokenChance"></param>
+        /// <param name="color"></param>
+        /// <returns></returns>
         protected Egg GetEgg(double minSize, double maxSize, double brokenChance, Egg.Colors color)
         {
             double eggSize = Rand.NextDouble() * (maxSize - minSize) + minSize;
